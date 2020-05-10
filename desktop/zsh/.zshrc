@@ -44,16 +44,8 @@ bindkey '\e[B' history-beginning-search-forward
 autoload -U select-word-style
 select-word-style normal
 
-#source /usr/share/fzf/key-bindings.zsh
-#source /usr/share/fzf/completion.zsh
-#source /usr/share/fzf/fzf-extras.zsh
-
 export QT_QPA_PLATFORMTHEME=qt5ct
-export ANSIBLE_COW_SELECTION=tux
-export KUBECONFIG=$HOME/.config/k8s/new-cluster.yaml
 export LS_COLORS="$(vivid generate ayu)"
-export SPOTIFY_CLIENT_ID="86a4c93420214365a228f7fee3402565"
-export SPOTIFY_SECRET="3dbb30d3cdf84f298754d334e76aee0f"
 
 chpwd() {
     printf "\033]%s\07\n" "zsh"
@@ -89,4 +81,5 @@ alias ytm='youtube-dl -x --audio-format mp3'
 
 source ~/.config/zsh_plugins.sh
 source ~/.config/gbt
-
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh

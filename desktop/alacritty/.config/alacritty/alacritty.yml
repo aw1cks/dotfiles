@@ -27,8 +27,8 @@ scrolling:
 
 font:
   normal:
-    family: "Essential PragmataPro"
-  size: 15.0
+    family: "monospace"
+  size: 13.0
 
 cursor:
   style: Beam

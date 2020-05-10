@@ -1,6 +1,6 @@
 [global]
 
-font = Segoe UI Semilight 13
+font = sans-serif 13
 
 frame_width = 0
 frame_color = "#d8d8d8"
