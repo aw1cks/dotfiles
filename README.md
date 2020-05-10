@@ -8,7 +8,7 @@ $ git clone https://github.com/aw1cks/dotfiles
 $ cd dotfiles
 $ git lfs install && git lfs pull
 $ cd desktop
-$ stow -d /home/alex *
+$ stow -t /home/alex *
 ```
 
 ### Programs Configured
