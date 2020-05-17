@@ -1,0 +1,30 @@
+#!/bin/bash
+
+NVIDIA_DISPLAY="DFP-0"
+XRANDR_DISPLAY="DP-0"
+
+vibrance () {
+    nvidia-settings -a "0/DigitalVibrance[$NVIDIA_DISPLAY]=${1:-0}"
+}
+
+startup () {
+    nvidia-settings -a 'GPUPowerMizerMode=1'
+    [ $(pgrep picom) ] && pkill picom
+    [ $(pgrep dunst) ] && notify-send DUNST_COMMAND_PAUSE
+    vibrance '1023'
+}
+
+shutdown () {
+    nvidia-settings -a 'GPUPowerMizerMode=2'
+    [ $(pgrep picom) ] || picom --experimental-backends &
+    [ $(pgrep dunst) ] && notify-send DUNST_COMMAND_RESUME
+    vibrance
+}
+
+if [ -z $1 ]; then
+  [ $(pgrep csgo_linux64) ] && startup || shutdown
+elif [ $1 = 'start' ]; then
+  startup
+elif [ $1 = 'stop' ]; then
+  shutdown
+fi
