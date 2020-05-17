@@ -6,7 +6,7 @@ Plug 'mike-hearn/base16-vim-lightline'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'valloric/youcompleteme'
+Plug 'valloric/youcompleteme', { 'do': { -> './install.py --all' } }
 Plug 'ekalinin/dockerfile.vim'
 Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.sh' }
 Plug 'tpope/vim-eunuch'
@@ -16,7 +16,7 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'mhinz/vim-startify'
 Plug 'roxma/vim-paste-easy'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
 Plug 'preservim/nerdcommenter'
 Plug 'ryanoasis/vim-devicons'
 
@@ -38,8 +38,10 @@ let g:lightline = {
         \ 't': 'T',
         \ },
       \ 'component': {
-      	\ 'lineinfo': '%3l:%-2v%<',
+       \ 'lineinfo': ' %3l::%-2v',
       	\ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' },
 			\ 'colorscheme': 'base16_default_dark'
       \ }
 

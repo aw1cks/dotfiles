@@ -11,6 +11,20 @@ $ cd desktop
 $ stow -t /home/alex *
 ```
 
+### Directory Structure
+```
+.
+├── common # Dotfiles shared across all machines
+├── desktop # Dotfiles for my desktop
+├── laptop # Dotfiles for my laptop
+├── work # Dotfiles for my work PC
+├── package-list # List of installed packages
+│   ├── desktop
+│   ├── laptop
+│   └── work
+└── system-config # Files that live outside of $HOME
+```
+
 ### Programs Configured
 * ZSH
 * Neovim

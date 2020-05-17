@@ -1,0 +1,15 @@
+[Unit]
+Description=LDN1 AnyConnect to Office
+Before=ldn1-anyconnect.service
+After=network-online.target
+
+[Service]
+Type=forking
+KillMode=none
+ExecStart=/usr/bin/screen -dmfa -S openconnect-ldn1 %h/.local/bin/ldnvpn
+ExecStop=/bin/bash -c "test $(pidof openconnect) && sudo killall -w -s 2 /usr/bin/openconnect"
+WorkingDirectory=%h
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

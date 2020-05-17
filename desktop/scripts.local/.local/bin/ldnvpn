@@ -1,0 +1,20 @@
+#!/bin/sh
+
+URL='https://ldnvpn.eu.flextrade.com'
+USER='awicks'
+AUTHGROUP='London-MFA'
+INTNAME="tun127"
+
+if $(ip a show dev $INTNAME > /dev/null 2>&1); then
+  echo "interface already exists; exiting"
+  exit 1
+else
+  (echo $(pass work/ad/flexwin); echo $(pass otp work/ad/azure)) |
+    sudo openconnect \
+    --user=$USER \
+    --authgroup=$AUTHGROUP \
+    -i $INTNAME \
+    --passwd-on-stdin \
+    --non-inter \
+    $URL
+fi
