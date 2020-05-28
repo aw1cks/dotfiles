@@ -77,10 +77,9 @@ alias tmux='tmux -u'
 alias antibody-update="antibody bundle < ~/.config/zsh_plugins.txt > ~/.config/zsh_plugins.sh"
 alias yayskip='yay -S --mflags --skipinteg'
 alias ytm='youtube-dl -x --audio-format mp3'
-alias lvpnup='systemctl --user start ldn1-anyconnect && systemctl --user start socks-work'
-alias lvpndown='systemctl --user stop ldn1-anyconnect && systemctl --user stop socks-work'
+alias lvpnup='systemctl --user start ldn1-anyconnect'
+alias lvpndown='systemctl --user stop ldn1-anyconnect'
 
 source ~/.config/zsh_plugins.sh
 source ~/.config/gbt
 source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
